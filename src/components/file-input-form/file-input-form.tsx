@@ -11,10 +11,14 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui";
+import { FileInput } from "../file-input";
 
 const Fileinputform = () => {
   const formSchema = z.object({
-    files: z.array(z.instanceof(File)).min(1, "At least one file is required"),
+    files: z
+      .array(z.instanceof(File))
+      .min(1, "At least one file is required")
+      .nullable(),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -37,7 +41,9 @@ const Fileinputform = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Select Files</FormLabel>
-              <FormControl>{/*todo: add file input component*/}</FormControl>
+              <FormControl>
+                <FileInput field={field} multiple={true} />
+              </FormControl>
               <FormDescription>
                 This is your public display name.
               </FormDescription>
