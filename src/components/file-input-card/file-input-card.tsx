@@ -1,3 +1,4 @@
+import { Fileinputform } from "../file-input-form";
 import {
   Card,
   CardContent,
@@ -10,13 +11,13 @@ import {
 //todo : complete this after creating the file input component
 const FileInputCard = () => {
   return (
-    <Card>
+    <Card className="min-w-xl">
       <CardHeader>
         <CardTitle>Card Title</CardTitle>
         <CardDescription>Card Description</CardDescription>
       </CardHeader>
       <CardContent>
-        <p>Card Content</p>
+        <Fileinputform />
       </CardContent>
       <CardFooter>
         <p>Card Footer</p>
