@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "file-input",
   "type": "registry:component",
-  "title": "FileInput",
+  "title": "File Input",
   "author": "Vikram Samak",
   "description": "A file input component.",
   "dependencies": [
