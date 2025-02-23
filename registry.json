@@ -25,6 +25,59 @@
         {
           "path": "registry/file-input/file-list.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "registry/file-input/file-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/hooks/index.ts",
+          "type": "registry:file",
+          "target": "src/hooks/index.ts"
+        },
+        {
+          "path": "registry/hooks/useFileHandler.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "registry/types/index.ts",
+          "type": "registry:file",
+          "target": "src/types/index.ts"
+        },
+        {
+          "path": "registry/types/file-dropzone.types.ts",
+          "type": "registry:file",
+          "target": "src/types/file-dropzone.types.ts"
+        },
+        {
+          "path": "registry/types/file-input.types.ts",
+          "type": "registry:file",
+          "target": "src/types/file-input.types.ts"
+        },
+        {
+          "path": "registry/types/file-item.types.ts",
+          "type": "registry:file",
+          "target": "src/types/file-item.types.ts"
+        },
+        {
+          "path": "registry/types/file-list.types.ts",
+          "type": "registry:file",
+          "target": "src/types/file-list.types.ts"
+        },
+        {
+          "path": "registry/types/file-preview.types.ts",
+          "type": "registry:file",
+          "target": "src/types/file-preview.types.ts"
+        },
+        {
+          "path": "registry/types/generic.types.ts",
+          "type": "registry:file",
+          "target": "src/types/generic.types.ts"
+        },
+        {
+          "path": "registry/types/useFileHandler.types.ts",
+          "type": "registry:file",
+          "target": "src/types/useFileHandler.types.ts"
         }
       ],
       "dependencies": [
