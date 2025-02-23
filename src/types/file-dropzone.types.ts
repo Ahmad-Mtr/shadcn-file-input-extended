@@ -1,6 +1,6 @@
-export interface FileDropzoneProps {
-  accept?: string;
-  multiple?: boolean;
+import { InputProps } from "./generic.types";
+
+export interface FileDropzoneProps extends InputProps {
   dragOver: boolean;
   fileRef: React.RefObject<HTMLInputElement | null>;
   handleDragOver: (event: React.DragEvent<HTMLDivElement>) => void;
