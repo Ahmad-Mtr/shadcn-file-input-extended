@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import { FileInputProps } from "./types";
+import { FileInputProps } from "@/types";
 import { useFileInput } from "@/hooks";
 import Filelist from "./file-list";
 

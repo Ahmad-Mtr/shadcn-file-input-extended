@@ -1,5 +1,5 @@
 import FileItem from "./file-item";
-import { FileListProps } from "./types";
+import { FileListProps } from "@/types";
 
 const Filelist: React.FC<FileListProps> = ({ files, onRemove }) => {
   if (files.length === 0) return null;
