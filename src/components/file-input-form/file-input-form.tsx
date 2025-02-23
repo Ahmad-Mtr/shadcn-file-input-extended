@@ -10,10 +10,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
+  Switch,
 } from "../ui";
 import { FileInput } from "../file-input";
+import { useState } from "react";
 
 const Fileinputform = () => {
+  const [showDropzone, setShowDropzone] = useState(true);
+
   const formSchema = z.object({
     file: z
       .union([
@@ -36,24 +40,48 @@ const Fileinputform = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-6 bg-gray-50 dark:bg-gray-900 p-6 rounded-lg shadow"
+      >
+        <div className="flex items-center justify-between border p-3 rounded-lg bg-white dark:bg-gray-800">
+          <div>
+            <FormLabel className="text-lg font-medium">Use Dropzone?</FormLabel>
+            <FormDescription>
+              Toggle between drag & drop or traditional file input.
+            </FormDescription>
+          </div>
+          <Switch checked={showDropzone} onCheckedChange={setShowDropzone} />
+        </div>
+
+        {/* File Input Field */}
         <FormField
           control={form.control}
           name="file"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="w-full">
               <FormLabel>Select Files</FormLabel>
               <FormControl>
-                <FileInput field={field} multiple={false} />
+                <FileInput
+                  field={field}
+                  multiple={false}
+                  showDropzone={showDropzone}
+                />
               </FormControl>
               <FormDescription>
-                This is your public display name.
+                {showDropzone
+                  ? "Drag & drop files into the dropzone."
+                  : "Click to select files."}
               </FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+
+        {/* Submit Button */}
+        <Button type="submit" className="w-full">
+          Submit
+        </Button>
       </form>
     </Form>
   );

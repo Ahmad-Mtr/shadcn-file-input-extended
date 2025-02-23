@@ -18,9 +18,9 @@ const FileDropzone: React.FC<FileDropzoneProps> = ({
 
   return (
     <div
-      className={`flex justify-center items-center p-4 border-2 rounded-lg transition cursor-pointer h-48 ${
-        dragOver ? "border-blue-500 bg-blue-100" : "border-gray-300 bg-gray-50"
-      }`}
+      className={`flex justify-center items-center p-4 border-2 rounded-lg transition-colors cursor-pointer h-24 
+      ${dragOver ? "border-primary bg-primary/10" : "border-muted bg-muted/50"} 
+      hover:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50`}
       onClick={handleClick}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}

@@ -23,3 +23,5 @@ export {
 } from "./form";
 
 export { Label } from "./label";
+export { Switch } from "./switch";
+export { Separator } from "./separator";
