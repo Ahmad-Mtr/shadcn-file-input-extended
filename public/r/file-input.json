@@ -1,0 +1,44 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "file-input",
+  "type": "registry:component",
+  "title": "FileInput",
+  "author": "Vikram Samak",
+  "description": "A file input component.",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "clsx",
+    "lucide-react",
+    "react-hook-form",
+    "tailwind-merge",
+    "tailwindcss-animate"
+  ],
+  "registryDependencies": [
+    "button",
+    "input",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "registry/file-input/file-input.tsx",
+      "content": "import { Input } from '@/components/ui/input';\nimport { FileInputProps } from '@/types';\nimport { useFileHandler } from '@/hooks';\nimport FilePreview from './file-preview';\nimport FileDropzone from './file-dropzone';\nimport Filelist from './file-list';\n\nexport const FileInput: React.FC<FileInputProps> = ({\n  field,\n  accept,\n  multiple = false,\n  showDropzone = true,\n}) => {\n  const {\n    fileRef,\n    selectedFiles,\n    handleFileChange,\n    removeFile,\n    dragOver,\n    handleDragOver,\n    handleDragLeave,\n    handleDrop,\n  } = useFileHandler({\n    initialValue: field.value,\n    onChange: field.onChange,\n    multiple,\n  });\n\n  return (\n    <div className=\"space-y-2\">\n      {showDropzone ? (\n        <>\n          <FileDropzone\n            accept={accept}\n            multiple={multiple}\n            dragOver={dragOver}\n            fileRef={fileRef}\n            handleDragOver={handleDragOver}\n            handleDragLeave={handleDragLeave}\n            handleDrop={handleDrop}\n            handleFileChange={handleFileChange}\n          />\n          <FilePreview files={selectedFiles} onRemove={removeFile} />\n        </>\n      ) : (\n        <>\n          <Input\n            type=\"file\"\n            ref={fileRef}\n            accept={accept}\n            multiple={multiple}\n            onChange={handleFileChange}\n          />\n          <Filelist files={selectedFiles} onRemove={removeFile} />\n        </>\n      )}\n    </div>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/file-input/file-preview.tsx",
+      "content": "import { X } from 'lucide-react';\nimport { Card, CardContent } from '@/components/ui/card';\nimport { Button } from '@/components/ui/button';\nimport { cn } from '@/lib/utils';\nimport { FilePreviewProps } from '@/types';\n\nconst FilePreview: React.FC<FilePreviewProps> = ({ files, onRemove }) => {\n  return (\n    <div className=\"space-y-2\">\n      {files.length > 0 ? (\n        <div className=\"grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4\">\n          {files.map((file, index) => {\n            const isImage = file.type.startsWith('image/');\n\n            return (\n              <Card key={index} className=\"relative group\">\n                <CardContent className=\"p-2\">\n                  {isImage ? (\n                    <img\n                      src={URL.createObjectURL(file)}\n                      alt={file.name}\n                      className=\"w-full h-32 object-cover rounded-md\"\n                    />\n                  ) : (\n                    <div className=\"flex items-center justify-center h-32 bg-gray-100 rounded-md\">\n                      <span className=\"text-sm text-gray-600\">{file.name}</span>\n                    </div>\n                  )}\n\n                  {/* Remove Button */}\n                  <Button\n                    variant=\"destructive\"\n                    size=\"icon\"\n                    onClick={() => onRemove(index)}\n                    className={cn(\n                      'absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-full w-6 h-6'\n                    )}\n                  >\n                    <X size={16} />\n                  </Button>\n                </CardContent>\n              </Card>\n            );\n          })}\n        </div>\n      ) : (\n        <p className=\"text-gray-500 text-sm\">No files selected</p>\n      )}\n    </div>\n  );\n};\n\nexport default FilePreview;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/file-input/file-dropzone.tsx",
+      "content": "import { FileDropzoneProps } from '@/types';\nimport { Input } from '@/components/ui/input';\n\nconst FileDropzone: React.FC<FileDropzoneProps> = ({\n  accept,\n  multiple,\n  dragOver,\n  fileRef,\n  handleDragOver,\n  handleDragLeave,\n  handleDrop,\n  handleFileChange,\n}) => {\n  const handleClick = () => {\n    if (fileRef.current) {\n      fileRef.current.click();\n    }\n  };\n\n  return (\n    <div\n      className={`flex justify-center items-center p-4 border-2 rounded-lg transition-colors cursor-pointer h-24 \n      ${dragOver ? 'border-primary bg-primary/10' : 'border-muted bg-muted/50'} \n      hover:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50`}\n      onClick={handleClick}\n      onDragOver={handleDragOver}\n      onDragLeave={handleDragLeave}\n      onDrop={handleDrop}\n    >\n      <p className=\"text-center text-gray-600\">Drag & drop files here</p>\n\n      <Input\n        type=\"file\"\n        ref={fileRef}\n        accept={accept}\n        multiple={multiple}\n        onChange={handleFileChange}\n        className=\"hidden\"\n      />\n    </div>\n  );\n};\n\nexport default FileDropzone;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/file-input/file-list.tsx",
+      "content": "import FileItem from './file-item';\nimport { FileListProps } from '@/types';\n\nconst Filelist: React.FC<FileListProps> = ({ files, onRemove }) => {\n  if (files.length === 0) return null;\n\n  return (\n    <div className=\"mt-2 space-y-2\">\n      {files.map((file, index) => (\n        <FileItem key={index} file={file} onRemove={() => onRemove(index)} />\n      ))}\n    </div>\n  );\n};\n\nexport default Filelist;\n",
+      "type": "registry:component"
+    }
+  ]
+}

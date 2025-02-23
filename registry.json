@@ -1,16 +1,29 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "Shadcn-File-Input",
+  "name": "file-input",
   "homepage": "https://github.com/vikramsamak/shadcn-file-input",
   "items": [
     {
-      "name": "shadcn-file-input",
+      "name": "file-input",
       "type": "registry:component",
-      "title": "FileInput",
+      "title": "File Input",
       "description": "A file input component.",
+      "author": "Vikram Samak",
       "files": [
         {
           "path": "registry/file-input/file-input.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/file-input/file-preview.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/file-input/file-dropzone.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/file-input/file-list.tsx",
           "type": "registry:component"
         }
       ],
