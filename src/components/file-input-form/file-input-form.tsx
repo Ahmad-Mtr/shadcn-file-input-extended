@@ -2,7 +2,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import {
-  Button,
   Form,
   FormControl,
   FormDescription,
@@ -10,10 +9,11 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-  Switch,
-} from "../ui";
+} from "@/components/ui/form";
 import { FileInput } from "../file-input";
 import { useState } from "react";
+import { Switch } from "@/components/ui/switch";
+import { Button } from "@/components/ui/button";
 
 const Fileinputform = () => {
   const [showDropzone, setShowDropzone] = useState(true);

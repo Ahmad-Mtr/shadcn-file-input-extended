@@ -1,4 +1,5 @@
 import { FileDropzoneProps } from "@/types/file-dropzone.types";
+import { Input } from "@/components/ui/input";
 
 const FileDropzone: React.FC<FileDropzoneProps> = ({
   accept,
@@ -28,7 +29,7 @@ const FileDropzone: React.FC<FileDropzoneProps> = ({
     >
       <p className="text-center text-gray-600">Drag & drop files here</p>
 
-      <input
+      <Input
         type="file"
         ref={fileRef}
         accept={accept}
