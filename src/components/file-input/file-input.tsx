@@ -1,9 +1,9 @@
 import { Input } from "@/components/ui/input";
 import { FileInputProps } from "@/types";
-import { useFileInput } from "@/hooks";
-import Filelist from "./file-list";
-import FileDropzone from "./file-dropzone";
+import { useFileHandler } from "@/hooks";
 import FilePreview from "./file-preview";
+import FileDropzone from "./file-dropzone";
+import Filelist from "./file-list";
 
 export const FileInput: React.FC<FileInputProps> = ({
   field,
@@ -11,19 +11,34 @@ export const FileInput: React.FC<FileInputProps> = ({
   multiple = false,
   showDropzone = true,
 }) => {
-  const { fileRef, selectedFiles, handleFileChange, removeFile } = useFileInput(
-    {
-      initialValue: field.value,
-      onChange: field.onChange,
-      multiple,
-    }
-  );
+  const {
+    fileRef,
+    selectedFiles,
+    handleFileChange,
+    removeFile,
+    dragOver,
+    handleDragOver,
+    handleDragLeave,
+    handleDrop,
+  } = useFileHandler({
+    initialValue: field.value,
+    onChange: field.onChange,
+    multiple,
+  });
 
   return (
     <div className="space-y-2">
       {showDropzone ? (
         <>
-          <FileDropzone field={field} accept={accept} multiple={multiple} />
+          <FileDropzone
+            accept={accept}
+            multiple={multiple}
+            dragOver={dragOver}
+            handleDragOver={handleDragOver}
+            handleDragLeave={handleDragLeave}
+            handleDrop={handleDrop}
+            handleFileChange={handleFileChange}
+          />
           <FilePreview files={selectedFiles} onRemove={removeFile} />
         </>
       ) : (

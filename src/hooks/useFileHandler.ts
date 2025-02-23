@@ -1,19 +1,24 @@
-import { useFileInputProps } from "@/types";
-import { useRef, useState } from "react";
+import { useState, useRef } from "react";
 
-export function useFileInput({
+interface UseFileHandlerProps {
+  initialValue?: File[];
+  onChange: (file: File | File[] | null) => void;
+  multiple?: boolean;
+}
+
+export function useFileHandler({
   initialValue,
   onChange,
   multiple,
-}: useFileInputProps) {
+}: UseFileHandlerProps) {
   const [selectedFiles, setSelectedFiles] = useState<File[]>(
     initialValue || []
   );
+  const [dragOver, setDragOver] = useState(false);
+  
   const fileRef = useRef<HTMLInputElement>(null);
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files ? Array.from(event.target.files) : [];
-
+  const handleFiles = (files: File[]) => {
     if (multiple) {
       setSelectedFiles(files);
       onChange(files.length > 0 ? files : null);
@@ -22,6 +27,11 @@ export function useFileInput({
       setSelectedFiles(singleFile ? [singleFile] : []);
       onChange(singleFile);
     }
+  };
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files ? Array.from(event.target.files) : [];
+    handleFiles(files);
   };
 
   const removeFile = (index: number) => {
@@ -47,5 +57,30 @@ export function useFileInput({
     }
   };
 
-  return { fileRef, selectedFiles, handleFileChange, removeFile };
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setDragOver(true);
+  };
+
+  const handleDragLeave = () => {
+    setDragOver(false);
+  };
+
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setDragOver(false);
+    const files = Array.from(event.dataTransfer.files);
+    handleFiles(files);
+  };
+
+  return {
+    fileRef,
+    selectedFiles,
+    handleFileChange,
+    removeFile,
+    dragOver,
+    handleDragOver,
+    handleDragLeave,
+    handleDrop,
+  };
 }
