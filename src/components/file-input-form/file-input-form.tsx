@@ -15,16 +15,18 @@ import { FileInput } from "../file-input";
 
 const Fileinputform = () => {
   const formSchema = z.object({
-    files: z
-      .array(z.instanceof(File))
-      .min(1, "At least one file is required")
+    file: z
+      .union([
+        z.array(z.instanceof(File)).min(1, "At least one file is required"),
+        z.instanceof(File),
+      ])
       .nullable(),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      files: [],
+      file: null,
     },
   });
 
@@ -37,12 +39,12 @@ const Fileinputform = () => {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
-          name="files"
+          name="file"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Select Files</FormLabel>
               <FormControl>
-                <FileInput field={field} multiple={true} />
+                <FileInput field={field} multiple={false} />
               </FormControl>
               <FormDescription>
                 This is your public display name.
