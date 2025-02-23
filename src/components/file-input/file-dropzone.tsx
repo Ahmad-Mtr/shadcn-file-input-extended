@@ -1,17 +1,15 @@
-import { useRef } from "react";
 import { FileDropzoneProps } from "@/types/file-dropzone.types";
 
 const FileDropzone: React.FC<FileDropzoneProps> = ({
   accept,
   multiple,
   dragOver,
+  fileRef,
   handleDragOver,
   handleDragLeave,
   handleDrop,
   handleFileChange,
 }) => {
-  const fileRef = useRef<HTMLInputElement>(null);
-
   const handleClick = () => {
     if (fileRef.current) {
       fileRef.current.click();

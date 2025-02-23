@@ -2,6 +2,7 @@ export interface FileDropzoneProps {
   accept?: string;
   multiple?: boolean;
   dragOver: boolean;
+  fileRef: React.RefObject<HTMLInputElement | null>;
   handleDragOver: (event: React.DragEvent<HTMLDivElement>) => void;
   handleDragLeave: () => void;
   handleDrop: (event: React.DragEvent<HTMLDivElement>) => void;

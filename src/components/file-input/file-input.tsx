@@ -34,6 +34,7 @@ export const FileInput: React.FC<FileInputProps> = ({
             accept={accept}
             multiple={multiple}
             dragOver={dragOver}
+            fileRef={fileRef}
             handleDragOver={handleDragOver}
             handleDragLeave={handleDragLeave}
             handleDrop={handleDrop}
