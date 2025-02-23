@@ -1,4 +1,4 @@
-import { InputProps } from "./generic.types";
+import { InputProps } from './generic.types';
 
 export interface FileDropzoneProps extends InputProps {
   dragOver: boolean;

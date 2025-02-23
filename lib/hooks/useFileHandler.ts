@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef } from 'react';
 
 interface UseFileHandlerProps {
   initialValue?: File[];
@@ -15,7 +15,7 @@ export function useFileHandler({
     initialValue || []
   );
   const [dragOver, setDragOver] = useState(false);
-  
+
   const fileRef = useRef<HTMLInputElement>(null);
 
   const handleFiles = (files: File[]) => {
@@ -47,7 +47,7 @@ export function useFileHandler({
     }
 
     if (fileRef.current) {
-      fileRef.current.value = "";
+      fileRef.current.value = '';
     }
 
     if (multiple && updatedFiles.length > 0 && fileRef.current) {

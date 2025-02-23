@@ -1,5 +1,5 @@
-import { FileDropzoneProps } from "@/types/file-dropzone.types";
-import { Input } from "@/components/ui/input";
+import { FileDropzoneProps } from '@/types/file-dropzone.types';
+import { Input } from '@/components/ui/input';
 
 const FileDropzone: React.FC<FileDropzoneProps> = ({
   accept,
@@ -20,7 +20,7 @@ const FileDropzone: React.FC<FileDropzoneProps> = ({
   return (
     <div
       className={`flex justify-center items-center p-4 border-2 rounded-lg transition-colors cursor-pointer h-24 
-      ${dragOver ? "border-primary bg-primary/10" : "border-muted bg-muted/50"} 
+      ${dragOver ? 'border-primary bg-primary/10' : 'border-muted bg-muted/50'} 
       hover:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50`}
       onClick={handleClick}
       onDragOver={handleDragOver}

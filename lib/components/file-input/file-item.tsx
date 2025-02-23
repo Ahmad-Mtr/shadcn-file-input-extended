@@ -1,7 +1,7 @@
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
-import { FileItemProps } from "@/types";
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { X } from 'lucide-react';
+import { FileItemProps } from '@/types';
 
 const FileItem: React.FC<FileItemProps> = ({ file, onRemove }) => {
   return (

@@ -1,8 +1,8 @@
-import { X } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/utils/utils";
-import { FilePreviewProps } from "@/types";
+import { X } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/utils/utils';
+import { FilePreviewProps } from '@/types';
 
 const FilePreview: React.FC<FilePreviewProps> = ({ files, onRemove }) => {
   return (
@@ -10,7 +10,7 @@ const FilePreview: React.FC<FilePreviewProps> = ({ files, onRemove }) => {
       {files.length > 0 ? (
         <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
           {files.map((file, index) => {
-            const isImage = file.type.startsWith("image/");
+            const isImage = file.type.startsWith('image/');
 
             return (
               <Card key={index} className="relative group">
@@ -33,7 +33,7 @@ const FilePreview: React.FC<FilePreviewProps> = ({ files, onRemove }) => {
                     size="icon"
                     onClick={() => onRemove(index)}
                     className={cn(
-                      "absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-full w-6 h-6"
+                      'absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-full w-6 h-6'
                     )}
                   >
                     <X size={16} />

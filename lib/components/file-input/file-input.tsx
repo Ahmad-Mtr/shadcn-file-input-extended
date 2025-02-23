@@ -1,9 +1,9 @@
-import { Input } from "@/components/ui/input";
-import { FileInputProps } from "@/types";
-import { useFileHandler } from "@/hooks";
-import FilePreview from "./file-preview";
-import FileDropzone from "./file-dropzone";
-import Filelist from "./file-list";
+import { Input } from '@/components/ui/input';
+import { FileInputProps } from '@/types';
+import { useFileHandler } from '@/hooks';
+import FilePreview from './file-preview';
+import FileDropzone from './file-dropzone';
+import Filelist from './file-list';
 
 export const FileInput: React.FC<FileInputProps> = ({
   field,
