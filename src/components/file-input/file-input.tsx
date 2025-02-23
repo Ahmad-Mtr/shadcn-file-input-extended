@@ -3,6 +3,7 @@ import { FileInputProps } from "@/types";
 import { useFileInput } from "@/hooks";
 import Filelist from "./file-list";
 import FileDropzone from "./file-dropzone";
+import FilePreview from "./file-preview";
 
 export const FileInput: React.FC<FileInputProps> = ({
   field,
@@ -23,7 +24,7 @@ export const FileInput: React.FC<FileInputProps> = ({
       {showDropzone ? (
         <>
           <FileDropzone field={field} accept={accept} multiple={multiple} />
-          {/* <FilePreview files={selectedFiles} onRemove={removeFile} /> */}
+          <FilePreview files={selectedFiles} onRemove={removeFile} />
         </>
       ) : (
         <>

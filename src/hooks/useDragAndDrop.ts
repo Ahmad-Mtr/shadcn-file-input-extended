@@ -1,7 +1,7 @@
-import { UseDragAndDropProps } from "@/types";
+import { useDragAndDropProps } from "@/types";
 import { useState, useRef } from "react";
 
-export const useDragAndDrop = ({ multiple, onChange }: UseDragAndDropProps) => {
+export const useDragAndDrop = ({ multiple, onChange }: useDragAndDropProps) => {
   const [dragOver, setDragOver] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 

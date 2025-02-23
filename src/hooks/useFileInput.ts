@@ -1,4 +1,4 @@
-import { useFileInputProps } from "@/components/file-input/types";
+import { useFileInputProps } from "@/types";
 import { useRef, useState } from "react";
 
 export function useFileInput({
