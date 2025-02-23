@@ -1,16 +1,11 @@
+import { useFileHandlerProps } from '@/types';
 import { useState, useRef } from 'react';
-
-interface UseFileHandlerProps {
-  initialValue?: File[];
-  onChange: (file: File | File[] | null) => void;
-  multiple?: boolean;
-}
 
 export function useFileHandler({
   initialValue,
   onChange,
   multiple,
-}: UseFileHandlerProps) {
+}: useFileHandlerProps) {
   const [selectedFiles, setSelectedFiles] = useState<File[]>(
     initialValue || []
   );
