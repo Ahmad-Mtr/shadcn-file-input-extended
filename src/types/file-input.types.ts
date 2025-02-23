@@ -5,4 +5,5 @@ export type FileInputProps = {
   field: ControllerRenderProps<any, any>;
   accept?: string;
   multiple?: boolean;
+  showDropzone?: boolean;
 };
