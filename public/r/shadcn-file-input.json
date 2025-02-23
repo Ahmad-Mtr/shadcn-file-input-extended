@@ -13,11 +13,7 @@
     "tailwind-merge",
     "tailwindcss-animate"
   ],
-  "registryDependencies": [
-    "button",
-    "input",
-    "card"
-  ],
+  "registryDependencies": ["button", "input", "card"],
   "files": [
     {
       "path": "registry/file-input/file-input.tsx",
