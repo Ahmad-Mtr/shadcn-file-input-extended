@@ -1,5 +1,5 @@
 import { FileDropzoneProps } from '@/types';
-import { Input } from '../ui/input';
+import { Input } from '@/components/ui/input';
 
 const FileDropzone: React.FC<FileDropzoneProps> = ({
   accept,

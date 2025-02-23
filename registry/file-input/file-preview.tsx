@@ -1,7 +1,7 @@
 import { X } from 'lucide-react';
-import { Card, CardContent } from '../ui/card';
-import { Button } from '../ui/button';
-import { cn } from '@/utils/utils';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { FilePreviewProps } from '@/types';
 
 const FilePreview: React.FC<FilePreviewProps> = ({ files, onRemove }) => {

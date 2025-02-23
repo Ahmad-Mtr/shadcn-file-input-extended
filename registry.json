@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "Shadcn-File-Input",
+  "homepage": "https://github.com/vikramsamak/shadcn-file-input",
+  "items": [
+    {
+      "name": "shadcn-file-input",
+      "type": "registry:component",
+      "title": "FileInput",
+      "description": "A file input component.",
+      "files": [
+        {
+          "path": "registry/file-input/file-input.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority",
+        "clsx",
+        "lucide-react",
+        "react-hook-form",
+        "tailwind-merge",
+        "tailwindcss-animate"
+      ],
+      "registryDependencies": ["button", "input", "card"]
+    }
+  ]
+}
