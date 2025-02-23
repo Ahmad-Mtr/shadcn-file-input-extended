@@ -1,4 +1,4 @@
-import { Input } from '@/components/ui/input';
+import { Input } from '../ui/input';
 import { FileInputProps } from '@/types';
 import { useFileHandler } from '@/hooks';
 import FilePreview from './file-preview';
