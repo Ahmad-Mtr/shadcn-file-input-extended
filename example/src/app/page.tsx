@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useState } from 'react';
 import Header from '@/components/header';
 import FileInputForm from '@/components/file-input-form';
+import { fileInputCode } from '../constants/file-input-form-code';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('preview');
@@ -26,13 +27,7 @@ export default function Home() {
                 <FileInputForm />
               </TabsContent>
               <TabsContent value="code">
-                <Code
-                  code={`
-\`\`\`ts {4} showLineNumbers
-const add = (a: number, b: number): number => a + b;
-\`\`\`
-`}
-                />
+                <Code code={fileInputCode} />
               </TabsContent>
             </Tabs>
           </CardContent>

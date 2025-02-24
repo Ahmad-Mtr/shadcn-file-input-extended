@@ -23,7 +23,7 @@ export function Code({ code, className }: CodeProps) {
         .use(remarkParse)
         .use(remarkRehype)
         .use(rehypePrettyCode, {
-          theme: 'github-dark-default',
+          theme: 'dark-plus',
           transformers: [
             transformerCopyButton({
               visibility: 'always',
@@ -43,10 +43,13 @@ export function Code({ code, className }: CodeProps) {
   return (
     <section
       className={cn(
-        'relative rounded-lg border bg-muted p-4 overflow-auto',
+        'relative border overflow-auto shadow-sm',
         className
       )}
-      dangerouslySetInnerHTML={{ __html: highlightedCode }}
-    />
+    >
+      <pre className="w-full text-sm leading-relaxed">
+        <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
+      </pre>
+    </section>
   );
 }
