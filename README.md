@@ -48,6 +48,6 @@ npx shadcn@latest add shadcn-file-input-extended.vercel.app/file-input.json
 
 💡 **Contributions Welcome!** Feel free to open issues or submit PRs.  
 
-📬 **Have questions?** Reach out on [Discussions](https://github.com/yourgithub/shadcn-file-input/discussions).  
+📬 **Have questions?** Reach out via [email](mailto:vikramsamak02@gmail.com).
 
 Made with ❤️ using [shadcn/ui](https://ui.shadcn.com)  
