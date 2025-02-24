@@ -1,6 +1,6 @@
-"use client";
-import { useFileHandlerProps } from "@/types";
-import { useState, useRef } from "react";
+'use client';
+import { useFileHandlerProps } from '@/types';
+import { useState, useRef } from 'react';
 
 export function useFileHandler({
   initialValue,
@@ -47,7 +47,7 @@ export function useFileHandler({
     }
 
     if (fileRef.current) {
-      fileRef.current.value = "";
+      fileRef.current.value = '';
     }
 
     if (multiple && updatedFiles.length > 0 && fileRef.current) {

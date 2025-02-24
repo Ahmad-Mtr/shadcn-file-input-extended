@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React from "react";
-import { ModeToggle } from "./mode-toggle";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { Github } from "lucide-react";
+import React from 'react';
+import { ModeToggle } from './mode-toggle';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { Github } from 'lucide-react';
 
 function Header() {
   return (

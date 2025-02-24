@@ -1,13 +1,13 @@
-"use client";
-import { Code } from "@/components/code";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useState } from "react";
-import Header from "@/components/header";
-import FileInputForm from "@/components/file-input-form";
+'use client';
+import { Code } from '@/components/code';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useState } from 'react';
+import Header from '@/components/header';
+import FileInputForm from '@/components/file-input-form';
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState("preview");
+  const [activeTab, setActiveTab] = useState('preview');
   return (
     <>
       <Header />

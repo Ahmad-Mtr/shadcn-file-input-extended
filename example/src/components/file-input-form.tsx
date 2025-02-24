@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/components/ui/button";
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -13,10 +13,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Switch } from "@/components/ui/switch";
-import { FileInput } from "@/components/file-input";
-import { toast } from "sonner";
+} from '@/components/ui/form';
+import { Switch } from '@/components/ui/switch';
+import { FileInput } from '@/components/file-input';
+import { toast } from 'sonner';
 
 const formSchema = z.object({
   files: z
@@ -38,7 +38,7 @@ function FileInputForm() {
 
   function onSubmit(data: FormData) {
     if (!data.files) {
-      toast.error("No files selected. Please choose a file.");
+      toast.error('No files selected. Please choose a file.');
       return;
     }
 
@@ -46,7 +46,7 @@ function FileInputForm() {
     let fileCount: number;
 
     if (Array.isArray(data.files)) {
-      fileNames = data.files.map((file) => file.name).join(", ");
+      fileNames = data.files.map((file) => file.name).join(', ');
       fileCount = data.files.length;
     } else {
       fileNames = data.files.name;
