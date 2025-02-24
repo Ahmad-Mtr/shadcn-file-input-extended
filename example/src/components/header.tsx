@@ -9,7 +9,7 @@ import { Github } from 'lucide-react';
 function Header() {
   return (
     <header className="w-full border-b bg-background shadow-sm">
-      <div className="container mx-auto flex items-center justify-between py-2 px-6">
+      <div className="flex items-center justify-between py-2 px-6">
         <Link href="/" className="text-xl font-bold tracking-tight">
           ShadCN File Input
         </Link>
