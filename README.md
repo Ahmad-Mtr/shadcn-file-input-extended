@@ -35,7 +35,7 @@ npx shadcn@latest add shadcn-file-input-extended.vercel.app/file-input.json
           field={field}
           accept="image/png, image/jpg"
           multiple={true}
-          showDropzone={showDropzone} // Optional
+          showDropzone={true} // Optional
         />
       </FormControl>
       <FormMessage />
