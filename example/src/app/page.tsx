@@ -1,6 +1,5 @@
 "use client";
 import { Code } from "@/components/code";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
@@ -37,7 +36,6 @@ const add = (a: number, b: number): number => a + b;
             </Tabs>
           </CardContent>
         </Card>
-        <Button className="mt-6">View on GitHub</Button>
       </main>
     </>
   );
