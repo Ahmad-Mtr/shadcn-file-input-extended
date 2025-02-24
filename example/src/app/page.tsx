@@ -1,5 +1,5 @@
 'use client';
-import { Code } from '@/components/code';
+import { Code } from '@/components/Code';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useState } from 'react';
