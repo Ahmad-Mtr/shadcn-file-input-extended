@@ -30,7 +30,11 @@ export function useFileHandler({
     handleFiles(files);
   };
 
-  const removeFile = (index: number) => {
+  const removeFile = (
+    index: number,
+    event?: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event?.preventDefault();
     let updatedFiles: File[] = [];
 
     if (multiple) {

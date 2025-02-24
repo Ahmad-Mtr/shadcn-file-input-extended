@@ -1,4 +1,7 @@
 export interface FileListProps {
   files: File[];
-  onRemove: (index: number) => void;
+  onRemove: (
+    index: number,
+    event?: React.MouseEvent<HTMLButtonElement>
+  ) => void;
 }

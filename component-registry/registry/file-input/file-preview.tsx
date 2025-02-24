@@ -31,7 +31,9 @@ const FilePreview: React.FC<FilePreviewProps> = ({ files, onRemove }) => {
                   <Button
                     variant="destructive"
                     size="icon"
-                    onClick={() => onRemove(index)}
+                    onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
+                      onRemove(index, event)
+                    }
                     className={cn(
                       'absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-full w-6 h-6'
                     )}

@@ -1,4 +1,4 @@
 export interface FileItemProps {
   file: File;
-  onRemove: () => void;
+  onRemove: (event?: React.MouseEvent<HTMLButtonElement>) => void;
 }
