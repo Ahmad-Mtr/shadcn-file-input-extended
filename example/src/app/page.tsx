@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
 import Header from "@/components/header";
+import FileInputForm from "@/components/file-input-form";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("preview");
@@ -22,7 +23,7 @@ export default function Home() {
                 <TabsTrigger value="code">Code</TabsTrigger>
               </TabsList>
               <TabsContent value="preview">
-                <p>FileInputForm</p>
+                <FileInputForm />
               </TabsContent>
               <TabsContent value="code">
                 <Code
