@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -58,9 +59,14 @@ function FileInputForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center justify-between border p-3 rounded-lg">
+          <div>
+            <FormLabel className="text-lg font-medium">Use Dropzone?</FormLabel>
+            <FormDescription>
+              Toggle between drag & drop or traditional file input.
+            </FormDescription>
+          </div>
           <Switch checked={showDropzone} onCheckedChange={setShowDropzone} />
-          <span>Show Dropzone</span>
         </div>
 
         <FormField
@@ -83,7 +89,9 @@ function FileInputForm() {
         />
 
         {/* Submit Button */}
-        <Button type="submit">Submit</Button>
+        <Button type="submit" className="w-full">
+          Submit
+        </Button>
       </form>
     </Form>
   );
