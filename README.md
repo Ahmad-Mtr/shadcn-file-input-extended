@@ -1,0 +1,53 @@
+
+# ShadCN File Input  
+
+A modern, customizable file input component built with ShadCN and react-hook-form, featuring drag-and-drop support and a sleek UI.
+
+## 🚀 Features  
+
+- 📂 **Drag & Drop File Upload**  
+- 🎨 **Fully Themed with ShadCN UI**  
+- 🔥 **Supports Single & Multiple File Selection**  
+- 🌙 **Dark Mode Compatible**  
+- ✨ **Animated and Accessible**  
+
+## 📸 Preview  
+
+![ShadCN File Input Demo](/example/public/demo.jpeg)  
+
+## 🛠 Installation  
+
+```sh
+npx shadcn@latest add http://localhost:5173/file-input.json
+```  
+
+## 🔧 Usage  
+
+```tsx
+<FormField
+  control={form.control}
+  name="files"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel>Upload Files</FormLabel>
+      <FormControl>
+        <FileInput
+          field={field}
+          accept="image/png, image/jpg"
+          multiple={true}
+          showDropzone={showDropzone} // Optional
+        />
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+```  
+
+## 🤝 Contributing  
+
+💡 **Contributions Welcome!** Feel free to open issues or submit PRs.  
+
+📬 **Have questions?** Reach out on [Discussions](https://github.com/yourgithub/shadcn-file-input/discussions).  
+
+Made with ❤️ using [shadcn/ui](https://ui.shadcn.com)  
