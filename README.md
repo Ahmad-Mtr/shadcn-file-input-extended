@@ -18,7 +18,7 @@ A modern, customizable file input component built with ShadCN and react-hook-for
 ## 🛠 Installation  
 
 ```sh
-npx shadcn@latest add shadcn-file-input-extended.vercel.app/file-input.json
+npx shadcn@latest add https://shadcn-file-input-extended.vercel.app/file-input.json
 ```  
 
 ## 🔧 Usage  
